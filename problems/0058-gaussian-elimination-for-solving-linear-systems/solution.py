@@ -24,5 +24,5 @@ def gaussian_elimination(A, b):
 
     x = np.zeros(n)
     for i in range(n-1, -1, -1):
-        x[i] = (b[i] - A[i, i+1:] @ x[i+1: ]) / A[i, i]
+        x[i] = (b[i] - A[i, i+1:] @ x[i+1:]) / A[i, i]
     return x
