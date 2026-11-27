@@ -20,7 +20,7 @@ def train_neuron(
 
     for _ in range(epochs):
         # foward
-        z = np.dot(X, weights) + bias
+        z = X @ weights + bias
         predictions = 1.0 / (1.0 + np.exp(-z))
 
         # foward MSE
@@ -30,7 +30,7 @@ def train_neuron(
 
         # backward
         dz = (2.0 / n) * errors * predictions * (1.0 - predictions)
-        dw = np.dot(X.T, dz)
+        dw = X.T @ dz
         db = np.sum(dz)
 
         # update weights
